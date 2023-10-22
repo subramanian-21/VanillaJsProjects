@@ -6,7 +6,7 @@
     min-height: 100vh;
     color: aliceblue;
     background-image: linear-gradient(to bottom,black,rgb(29, 29, 29),rgb(68, 67, 67),rgb(141, 141, 141));
-    display: flex;
+    display: flex;flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -34,6 +34,19 @@
     
   
 }
+.start{
+    height:60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mstart{
+    background-color: green;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: pointer;
+}
 .sec{
     width: 50%;
     height: 5px;
@@ -45,4 +58,16 @@
     
 
   
+}
+#stop{
+    display: none;
+}
+.red{
+    background-color: red;
+}
+.angle{
+    position: absolute;
+    top: 50px;
+    right: 40%;
+    left: 40%;
 }
