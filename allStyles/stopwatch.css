@@ -70,4 +70,7 @@
     top: 50px;
     right: 40%;
     left: 40%;
+    display: flex;
+    align-items: center;
+    width: 200px;
 }
