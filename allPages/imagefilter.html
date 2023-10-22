@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../allStyles/imagefilter.css">
+    <title>Image Filter</title>
+</head>
+<body>
+    <div class="body" id="body">
+      <input onchange="handleImage(event)"  name="imagee" type="file" accept="image/*" id="id">
+      <label for="id" class="select" id="idd">Select Image</label>
+    </div>
+    <div id="controls">
+        <input onchange="handleChange(event)" type="range" min="0" max="10" id="blur">
+        <label for="blur">Blur</label>
+    
+        <input type="range" min="0" max="500" id="brightness"  onchange="handleChange(event)">
+        <label for="brightness">Brightness</label>
+    
+        <input type="range" min="0" max="500" id="contrast"  onchange="handleChange(event)">
+        <label for="contrast">Contrast</label>
+    </div>
+    <div id="controls1">
+        <input onchange="handleChange(event)" type="range" min="0" max="100" id="grayscale">
+        <label for="grayscale">Grayscale</label>
+    
+        <input type="range" min="0" max="500" id="invert"  onchange="handleChange(event)">
+        <label for="invert">Invert</label>
+    
+        <input type="range" min="0" max="100" id="saturate"  onchange="handleChange(event)">
+        <label for="saturate">Saturate</label>
+    </div>
+    
+
+    <script src="../allScripts/imagefilter/script.js"></script>
+</body>
+</html>
