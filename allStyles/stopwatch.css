@@ -1,0 +1,48 @@
+*{
+    margin: 0%;
+}
+.body{
+    width: 100%;
+    min-height: 100vh;
+    color: aliceblue;
+    background-image: linear-gradient(to bottom,black,rgb(29, 29, 29),rgb(68, 67, 67),rgb(141, 141, 141));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.abs{
+    position: absolute;
+    top: 20px;
+}
+.clock{
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background-color: #181818;
+    border: 10px solid;
+    position: relative;
+   
+}
+.min{
+    width: 50%;
+    height: 10px;
+    background-color: aliceblue;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    
+  
+}
+.sec{
+    width: 50%;
+    height: 5px;
+    background-color: aliceblue;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    
+
+  
+}
