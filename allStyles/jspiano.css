@@ -40,3 +40,11 @@
 
     
 }
+h1{
+    color: white;
+    background-color: black;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
