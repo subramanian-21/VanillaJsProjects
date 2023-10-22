@@ -14,14 +14,29 @@ const keys = [
                 'A7', 'Bb7', 'B7', 'C8'
 ]
 const piano = document.getElementById('piano-body')
+const audio = keys.map(k=> new Audio(`/allScripts/jspiano/allkeysounds/${k}.mp3`))
+keys.forEach((k, index) => {
+    const keyBtn = document.createElement('div');
+    keyBtn.className = k.includes('b') ? 'black' : 'white';
+    piano.appendChild(keyBtn);
 
-keys.map(k=>{
-    const keyBtn = document.createElement('div')
-    keyBtn.className = 'keys'
-    if(k.includes('b')){
-        keyBtn.className = 'black'
-    }else{
-        keyBtn.className = 'white'
-    }
-    piano.appendChild(keyBtn)
-})
+    keyBtn.addEventListener('click', () => {
+        audio[index].play();
+    });
+});
+// keys.map(k=>{
+//     const keyBtn = document.createElement('div')
+//     keyBtn.className = 'key'
+//     if(k.includes('b')){
+//         keyBtn.className = 'black'
+//     }else{
+//         keyBtn.className = 'white'
+//     }
+//     piano.appendChild(keyBtn)
+// })
+
+// const clickKeys = document.getElementsByClassName('key')
+
+// clickKeys.forEach((k,i)=>{
+    
+// })
