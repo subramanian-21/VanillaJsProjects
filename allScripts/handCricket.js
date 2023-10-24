@@ -99,12 +99,14 @@ const clickFn =(e)=>{
     }
 
    tossStart()
-   mainStart()
+
   }
 function mainStart(){
     const mStart = document.getElementById('start-game')
     center.appendChild(scoreDiv)
     mStart.addEventListener('click',()=>{
+        const baseWrap = document.getElementById('base-wrap')
+        baseWrap.style.display = 'block'
         if(you === 'batting'){
             const all_btns = document.querySelectorAll('.click-btn')
             all_btns.forEach(k=>{
@@ -117,55 +119,58 @@ function mainStart(){
         }
     })
 }
-function tossStart(){    
-    const base_panel = document.getElementById('base')
-    base_panel.style.display = 'none'
- 
-    const showDiv = document.getElementById('show-div')
-    showDiv.innerText = `Toss ${tossWon}`
-    if(tossWon === 'won'){
-        const wrap_select = document.createElement('div')
-
-        const batting = document.createElement('button')
-        const bowling = document.createElement('button')
-        batting.innerText ='batting'
-        batting.className = 'select-toss'
-        bowling.innerText = 'bowling'
-        bowling.className = 'select-toss'
-        showDiv.appendChild(wrap_select)
-       wrap_select.appendChild(batting)
-       wrap_select.appendChild(bowling)
-      const selectToss = document.getElementsByClassName('select-toss')
-      
-      for(i =0;i<selectToss.length;i++){
-        selectToss[i].addEventListener('click',(e)=>{
-            you = e.target.innerText
-            showDiv.innerText=you
+function tossStart(){  
+    if(!toss){
+        const baseWrap = document.getElementById('base-wrap')
+        baseWrap.style.display = 'none'
+        const showDiv = document.getElementById('show-div')
+        showDiv.innerText = `Toss ${tossWon}`
+        toss = true
+        if(tossWon === 'won'){
+            const wrap_select = document.createElement('div')
+    
+            const batting = document.createElement('button')
+            const bowling = document.createElement('button')
+            batting.innerText ='batting'
+            batting.className = 'select-toss'
+            bowling.innerText = 'bowling'
+            bowling.className = 'select-toss'
+            showDiv.appendChild(wrap_select)
+           wrap_select.appendChild(batting)
+           wrap_select.appendChild(bowling)
+          const selectToss = document.getElementsByClassName('select-toss')
+          
+          for(i =0;i<selectToss.length;i++){
+            selectToss[i].addEventListener('click',(e)=>{
+                you = e.target.innerText
+                showDiv.innerText=you
+                const mStart = document.createElement('button')
+                mStart.innerText = "start game"
+                mStart.id = 'start-game'
+                showDiv.appendChild(mStart)
+                mainStart()
+            })
+          }
+          }else{
+            const computerChooseRandom = Math.floor(Math.random()*2)
+            console.log(computerChooseRandom)
+            const batOrBowl = ['batting','bowling']
+            const notifyPlayer = document.createElement('div')
+            notifyPlayer.className = 'white'
+            if(batOrBowl[computerChooseRandom] === 'batting'){
+                notifyPlayer.innerText = 'You Bat'
+                you = 'batting'
+            }else{
+                notifyPlayer.innerText = 'You Bowl'
+                you = 'bowling'
+            }
             const mStart = document.createElement('button')
             mStart.innerText = "start game"
             mStart.id = 'start-game'
             showDiv.appendChild(mStart)
+            showDiv.appendChild(notifyPlayer)
             mainStart()
-        })
-      }
-      }else{
-        const computerChooseRandom = Math.floor(Math.random()*2)
-        console.log(computerChooseRandom)
-        const batOrBowl = ['batting','bowling']
-        const notifyPlayer = document.createElement('div')
-        notifyPlayer.className = 'white'
-        if(batOrBowl[computerChooseRandom] === 'batting'){
-            notifyPlayer.innerText = 'You Bat'
-            you = 'batting'
-        }else{
-            notifyPlayer.innerText = 'You Bowl'
-            you = 'bowling'
-        }
-        const mStart = document.createElement('button')
-        mStart.innerText = "start game"
-        mStart.id = 'start-game'
-        showDiv.appendChild(mStart)
-        showDiv.appendChild(notifyPlayer)
-        mainStart()
-      }  
+          }  
+    }  
+    
 }
