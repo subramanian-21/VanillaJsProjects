@@ -11,6 +11,8 @@ let totalNa = 0
 let scoreRight = 0
 let scoreLeft = 0
 let you = ''
+const scoreDiv = document.createElement('div')
+
 function start(){
   start_btn.style.display = 'none'
   game_page.style.display = 'block'
@@ -116,6 +118,10 @@ const clickfn = function (e) {
         selectToss[i].addEventListener('click',(e)=>{
             you = e.target.innerText
             showDiv.innerText=you
+            const mStart = document.createElement('button')
+            mStart.innerText = "start game"
+            mStart.id = 'start-game'
+            showDiv.appendChild(mStart)
         })
       }
       }else{
@@ -131,19 +137,23 @@ const clickfn = function (e) {
             notifyPlayer.innerText = 'You Bowl'
             you = 'bowling'
         }
+        const mStart = document.createElement('button')
+        mStart.innerText = "start game"
+        mStart.id = 'start-game'
+        showDiv.appendChild(mStart)
         showDiv.appendChild(notifyPlayer)
-      }
-      
-
-      
-     
+      }  
     }
-   
     for(i = 0;i<all_btns.length;i++){
-    
       all_btns[i].addEventListener('click',clickFn)
-    
     }
-    
   }
 }
+const mStart = document.getElementById('start-game')
+mStart.addEventListener('click',()=>{
+    if(you === 'batting'){
+
+    }else{
+
+    }
+})
