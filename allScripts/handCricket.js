@@ -10,6 +10,7 @@ let total = 0;
 let totalNa = 0
 let scoreRight = 0
 let scoreLeft = 0
+let you = ''
 function start(){
   start_btn.style.display = 'none'
   game_page.style.display = 'block'
@@ -99,15 +100,40 @@ const clickfn = function (e) {
       showDiv.innerText = `Toss ${tossWon}`
       if(tossWon === 'won'){
         const wrap_select = document.createElement('div')
+
         const batting = document.createElement('button')
         const bowling = document.createElement('button')
         batting.innerText ='batting'
         batting.className = 'select-toss'
         bowling.innerText = 'bowling'
         bowling.className = 'select-toss'
-        showDiv.appendChild(batting)
-        showDiv.appendChild(bowling)
+        showDiv.appendChild(wrap_select)
+       wrap_select.appendChild(batting)
+       wrap_select.appendChild(bowling)
+      const selectToss = document.getElementsByClassName('select-toss')
+      
+      for(i =0;i<selectToss.length;i++){
+        selectToss[i].addEventListener('click',(e)=>{
+            you = e.target.innerText
+            showDiv.innerText=you
+        })
       }
+      }else{
+        const computerChooseRandom = Math.floor(Math.random()*2)
+        console.log(computerChooseRandom)
+        const batOrBowl = ['batting','bowling']
+        const notifyPlayer = document.createElement('div')
+        notifyPlayer.className = 'white'
+        if(batOrBowl[computerChooseRandom] === 'batting'){
+            notifyPlayer.innerText = 'You Bat'
+            you = 'batting'
+        }else{
+            notifyPlayer.innerText = 'You Bowl'
+            you = 'bowling'
+        }
+        showDiv.appendChild(notifyPlayer)
+      }
+      
 
       
      

@@ -112,6 +112,12 @@ align-items: center;
     display: flex;
     flex-direction: column;
 }
+.white{
+    color: white;
+    font-size: 20px;
+    font-weight: 1000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 @media (max-width:700px){
     #left,#right,#center{
         height: 60vw;
