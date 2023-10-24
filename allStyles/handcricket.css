@@ -1,0 +1,120 @@
+body{
+    margin: 0;
+}
+.body{
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.start{
+    width: 200px;
+    height: 200px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    background-color: #181818;
+    cursor: pointer;
+    border-radius: 100%;
+    border: 0.5px solid gray;
+}
+.game{
+    display: none;
+    width: 100%;
+
+}
+.game-body{
+    width: 100%;
+    min-height: 100vh;
+
+align-items: center;
+
+}
+.game-display{
+    display: flex;
+}
+#left,#right{
+    flex: 1;
+    background-color: #181818;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20vw;
+}
+#center{
+    flex: 0.5;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+   
+    align-items: center;
+}
+.base{
+  
+    width: 350px;
+    height: 200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    
+   
+}
+.click-btn{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+   margin: auto;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+#show-div{
+    height: 100px;
+}
+#score-box{
+    width: 90%;
+    outline: 1px solid;
+    height: 100px;
+}
+#popup{
+   
+    position: absolute;
+   width: 100%;
+   min-height: 100vh;
+   background-color: rgba(0, 0, 0, 0.526)
+}
+.popclass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+#pop-toss{
+    background-color: gray;
+    width: 350px;
+    height: 300px;
+    margin: auto;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#show-div{
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width:700px){
+    #left,#right,#center{
+        height: 60vw;
+    }
+   
+}
