@@ -118,6 +118,11 @@ align-items: center;
     font-weight: 1000;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+.score-div{
+    border: 1px dashed white;
+    width: 100px;
+    height: 100px;
+}
 @media (max-width:700px){
     #left,#right,#center{
         height: 60vw;

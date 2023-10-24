@@ -12,7 +12,7 @@ let scoreRight = 0
 let scoreLeft = 0
 let you = ''
 const scoreDiv = document.createElement('div')
-
+scoreDiv.className = 'score-div'
 function start(){
   start_btn.style.display = 'none'
   game_page.style.display = 'block'
@@ -70,37 +70,60 @@ const clickfn = function (e) {
       click_btn.id = i
       click_btn.innerText = i
       base_panel.appendChild(click_btn)
-    }
-    
+    }    
     const all_btns = document.querySelectorAll('.click-btn')
 
-    const clickFn =(e)=>{
-      const random = Math.floor(1+Math.random()*6)
-      const click = Number(e.target.id)
-      right.innerText = click
-      scoreRight += click
-     
-      left.innerText = random 
-      
-      total = random+click
-      if(total%2 === 0){
-        totalNa = 'even'
-      }else{
-        totalNa = 'odd'
-      }
-      if(tossVal === totalNa){
-        tossWon ='won'
-      }else{
-        tossWon = 'loose'
-      }
-      for(i = 0;i<all_btns.length;i++){
+    for(i = 0;i<all_btns.length;i++){
+      all_btns[i].addEventListener('click',clickFn)
+    }
+  }
+}
+const clickFn =(e)=>{
+    const random = Math.floor(1+Math.random()*6)
+    const click = Number(e.target.id)
+    right.innerText = click
+    scoreRight += click
+   
+    left.innerText = random 
     
-        all_btns[i].removeEventListener('click',clickFn)
-      
-      }
-      const showDiv = document.getElementById('show-div')
-      showDiv.innerText = `Toss ${tossWon}`
-      if(tossWon === 'won'){
+    total = random+click
+    if(total%2 === 0){
+      totalNa = 'even'
+    }else{
+      totalNa = 'odd'
+    }
+    if(tossVal === totalNa){
+      tossWon ='won'
+    }else{
+      tossWon = 'loose'
+    }
+
+   tossStart()
+   mainStart()
+  }
+function mainStart(){
+    const mStart = document.getElementById('start-game')
+    center.appendChild(scoreDiv)
+    mStart.addEventListener('click',()=>{
+        if(you === 'batting'){
+            const all_btns = document.querySelectorAll('.click-btn')
+            all_btns.forEach(k=>{
+                k.addEventListener('click',()=>{
+                    
+                })
+            })
+        }else{
+    
+        }
+    })
+}
+function tossStart(){    
+    const base_panel = document.getElementById('base')
+    base_panel.style.display = 'none'
+ 
+    const showDiv = document.getElementById('show-div')
+    showDiv.innerText = `Toss ${tossWon}`
+    if(tossWon === 'won'){
         const wrap_select = document.createElement('div')
 
         const batting = document.createElement('button')
@@ -122,6 +145,7 @@ const clickfn = function (e) {
             mStart.innerText = "start game"
             mStart.id = 'start-game'
             showDiv.appendChild(mStart)
+            mainStart()
         })
       }
       }else{
@@ -142,18 +166,6 @@ const clickfn = function (e) {
         mStart.id = 'start-game'
         showDiv.appendChild(mStart)
         showDiv.appendChild(notifyPlayer)
+        mainStart()
       }  
-    }
-    for(i = 0;i<all_btns.length;i++){
-      all_btns[i].addEventListener('click',clickFn)
-    }
-  }
 }
-const mStart = document.getElementById('start-game')
-mStart.addEventListener('click',()=>{
-    if(you === 'batting'){
-
-    }else{
-
-    }
-})
