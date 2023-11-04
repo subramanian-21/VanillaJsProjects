@@ -75,6 +75,9 @@ img{
     height: 100%;
     border-radius: 20px;
 }
+.black{
+    color: black;
+}
 @keyframes move {
     0%{
         width: 80%;
