@@ -1,6 +1,7 @@
 const body = document.getElementById("body")
 let selectedOption = null
 let selectedBox = null
+let mistake = 0
 
 const suduko = [
     "2---1--78",
@@ -57,15 +58,26 @@ function gameContent(){
                 tile.innerText = suduko[i][j]
             }
            
-
+            tile.id = i +"-" +j
             gameBoxDiv.appendChild(tile)
             tile.addEventListener("click",setTile)
         }
     }
 }
 function setTile(){
+    let rowCol = this.id.split("-")
+    let row = rowCol[0]
+    let col = rowCol[1]
     if(selectedOption){
-        this.innerHTML = selectedOption.id
+        if(this.innerText === ""){
+         if(sudukoAnswers[row][col] === selectedOption.id){
+            this.innerText = selectedOption.id
+         }else{
+            mistake+=1
+            console.log(mistake)
+         }
+        }
+       
     }else{
         alert("please select any number to place")
     }
