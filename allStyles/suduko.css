@@ -58,10 +58,21 @@
     justify-content: center;
     align-items: center;
     border: 1px solid rgb(65, 65, 65);
+    cursor: default;
 }
 .border-bottom{
     border-bottom: 1px solid whitesmoke;
 }
 .border-right{
     border-right: 1px solid whitesmoke;
+}
+@media (max-width:600px) {
+    #body{
+        flex-direction: column;
+    }
+    .option-box{
+        height: 50px;
+    width: 450px;
+    flex-direction: row;
+    }
 }

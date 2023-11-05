@@ -1,6 +1,29 @@
 const body = document.getElementById("body")
 let selectedOption = null
 let selectedBox = null
+
+const suduko = [
+    "2---1--78",
+    "--8---4-9",
+    "43-92--61",
+    "1--6--984",
+    "9---3-2-7",
+    "--2--961-",
+    "-7--8---6",
+    "8--3--7-5",
+    "649-5---2"
+]
+const sudukoAnswers = [
+    "296415378",
+    "518763429",
+    "437928561",
+    "153672984",
+    "964831257",
+    "782549613",
+    "375284196",
+    "821396745",
+    "649157832"
+]
 window.onload = function (){
     const gameBox = document.createElement("div")
     const optBox = document.createElement("div")
@@ -28,6 +51,13 @@ function gameContent(){
                 tile.classList.add("border-right")
             }
             tile.classList.add("tile")
+            if(suduko[i][j] === "-"){
+
+            }else{
+                tile.innerText = suduko[i][j]
+            }
+           
+
             gameBoxDiv.appendChild(tile)
             tile.addEventListener("click",setTile)
         }
