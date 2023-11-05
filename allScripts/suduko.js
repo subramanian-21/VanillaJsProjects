@@ -2,6 +2,7 @@ const body = document.getElementById("body")
 let selectedOption = null
 let selectedBox = null
 let mistake = 0
+const mainBody = document.getElementById("mainBody")
 const mistakeDiv = document.getElementById('mistake')
 const suduko = [
     "2---1--78",
@@ -75,11 +76,11 @@ function setTile(){
          }else{
             
             mistake+=1
-            if(mistake<=5)
-            mistakeDiv.innerText = mistake+"/5"
-             else{
-            
-        }
+            if(mistake<5){  
+                mistakeDiv.innerText = mistake+"/5"
+            }else{
+                popup("You Lose")
+            } 
          }
         }
        
@@ -113,6 +114,19 @@ function selectedOptionFn (){
 
 function popup(text){
     const popupDiv = document.createElement("div")
+    const popupBox = document.createElement("div")
+    const popupText = document.createElement("div")
+    const reloadBtn = document.createElement("button")
+    popupBox.classList.add("popup-box")
     popupDiv.classList.add("popup")
-    body.appendChild(popupDiv)
+    popupText.classList.add("popup-text")
+    popupText.innerText = text
+    reloadBtn.innerText = "Play Again"
+    
+    popupBox.appendChild(reloadBtn)
+    popupBox.appendChild(popupText)
+    popupDiv.appendChild(popupBox)
+    mainBody.appendChild(popupDiv)
+    reloadBtn.onclick =()=> window.location.reload()
+
 }
