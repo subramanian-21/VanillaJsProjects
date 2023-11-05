@@ -2,6 +2,7 @@ const body = document.getElementById("body")
 let selectedOption = null
 let selectedBox = null
 let mistake = 0
+
 const mainBody = document.getElementById("mainBody")
 const mistakeDiv = document.getElementById('mistake')
 const suduko = [
@@ -45,7 +46,6 @@ function gameContent(){
     for(let i = 0;i<9;i++){
         for(let j = 0;j<9;j++){
             const tile = document.createElement("div")
-          
             if(i === 2 || i === 5){
                 tile.classList.add("border-bottom")
             }
@@ -58,7 +58,6 @@ function gameContent(){
             }else{
                 tile.innerText = suduko[i][j]
             }
-           
             tile.id = i +"-" +j
             gameBoxDiv.appendChild(tile)
             tile.addEventListener("click",setTile)
@@ -66,13 +65,16 @@ function gameContent(){
     }
 }
 function setTile(){
+    let countDash = 0
     let rowCol = this.id.split("-")
     let row = rowCol[0]
     let col = rowCol[1]
     if(selectedOption){
         if(this.innerText === "" && mistake<=5){
          if(sudukoAnswers[row][col] === selectedOption.id){
+            suduko[row][col] = "1"
             this.innerText = selectedOption.id
+            checkWin()
          }else{
             
             mistake+=1
@@ -86,6 +88,21 @@ function setTile(){
        
     }else{
         alert("please select any number to place")
+    }
+
+    function checkWin(){
+    
+        const tileBox = document.getElementsByClassName("tile")
+        for(i = 0 ;i <tileBox.length;i ++){
+           if(tileBox[i].innerText === ""){
+            countDash+=1
+            console.log(countDash)
+           }
+        }
+                if(countDash === 0){
+                popup("You Win")
+            }
+    
     }
     
 }
@@ -130,3 +147,4 @@ function popup(text){
     reloadBtn.onclick =()=> window.location.reload()
 
 }
+
