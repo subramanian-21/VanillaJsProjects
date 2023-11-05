@@ -1,0 +1,14 @@
+
+*{
+    margin: 0;
+}
+.logo{
+    font-size: 25px;
+}
+.nav{
+    height: 60px;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
