@@ -2,7 +2,7 @@ const body = document.getElementById("body")
 let selectedOption = null
 let selectedBox = null
 let mistake = 0
-
+const mistakeDiv = document.getElementById('mistake')
 const suduko = [
     "2---1--78",
     "--8---4-9",
@@ -69,12 +69,17 @@ function setTile(){
     let row = rowCol[0]
     let col = rowCol[1]
     if(selectedOption){
-        if(this.innerText === ""){
+        if(this.innerText === "" && mistake<=5){
          if(sudukoAnswers[row][col] === selectedOption.id){
             this.innerText = selectedOption.id
          }else{
+            
             mistake+=1
-            console.log(mistake)
+            if(mistake<=5)
+            mistakeDiv.innerText = mistake+"/5"
+             else{
+            
+        }
          }
         }
        
@@ -104,4 +109,10 @@ function selectedOptionFn (){
     }
     selectedOption = this
     selectedOption.classList.add("clicked-option-box")
+}
+
+function popup(text){
+    const popupDiv = document.createElement("div")
+    popupDiv.classList.add("popup")
+    body.appendChild(popupDiv)
 }
