@@ -56,6 +56,7 @@ function gameContent(){
             if(suduko[i][j] === "-"){
 
             }else{
+                tile.classList.add("bgray")
                 tile.innerText = suduko[i][j]
             }
             tile.id = i +"-" +j

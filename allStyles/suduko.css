@@ -83,6 +83,9 @@
     align-items: center;
 
 }
+.bgray{
+    background-color: #292828;
+}
 .popup-box{
     width: 320px;
     height: 250px;
