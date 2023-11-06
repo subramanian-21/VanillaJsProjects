@@ -44,7 +44,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  animation: move 2s linear infinite;
+  animation: move 10s linear infinite;
 }
 .mbody {
   width: 80%;
@@ -83,7 +83,7 @@
   animation: all 500ms ease-in-out;
 }
 .pro-box:hover {
-  animation: inc 1s ease-in-out infinite;
+  animation: inc 2s ease-in-out infinite;
 }
 .pro-heading {
   font-size: 20px;
