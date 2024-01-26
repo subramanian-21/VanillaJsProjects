@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="../allStyles/employee.css" />
+  </head>
+  <body>
+    <div class="body">
+      <div class="header">Employee Management</div>
+      <button id="add">+ Add Employee</button>
+
+      <div class="mbody">
+        <div class="left">
+          <div class="e">Employees</div>
+          <div id="left"></div>
+        </div>
+        <div class="right">
+          <div class="e">Employee Details</div>
+          <div id="right">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form" id="form">
+      <form class="add-form">
+       
+        <div class="">Add Employee</div>
+        <div class="inner-flex">
+            <label for="id-form">Employee Id</label>
+            <input type="text" name="id" id="id-form" required/>
+          </div>
+        <div class="inner-flex">
+          <label for="name-form">Employee Name</label>
+          <input type="text" name="name" id="name-form" required/>
+        </div>
+        <div class="inner-flex">
+          <label for="date-form">Joining Date</label>
+          <input type="date" name="date" id="date-form" required/>
+        </div>
+        <div class="inner-flex">
+          <label for="pro-form">Profession</label>
+          <input type="text" name="title" id="pro-form" required/>
+        </div>
+
+        <input type="submit" class="submit-form" name="submit"  value="Add Employee" />
+      </form>
+    </div>
+    <script src="../allScripts/employee/employee.js"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+
+[{
+    "id":1,
+    "name":"beetlejuice",
+    "date":"12/01/2002",
+    "title":"QA engineer"
+},
+{
+    "id":2,
+    "name":"Garry",
+    "date":"12/01/2002",
+    "title":"Software engineer"
+},
+{
+    "id":3,
+    "name":"Bully Maguire",
+    "date":"12/01/2002",
+    "title":"Web Developer"
+}]
