@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="../allStyles/digitalClock.css">
+</head>
+<body>
+    <div class="body">
+        <div class="">
+            <div class="inner-body">
+                <div class="">
+                    <input type="number" class="hrs" id="hrs" oninput="this.value = this.value.slice(0,2)" placeholder="00">
+                    <div class="">Hours</div>
+                </div>
+                <div class="">
+                    <input type="number" class="min" id="min" oninput="this.value = this.value.slice(0,2) " placeholder="00">
+                    <div class="">Minutes</div>
+                </div>
+                <div class="">
+                    <input type="number" class="sec" id="sec" oninput="this.value = this.value.slice(0,2) " placeholder="00">
+                    <div class="">Seconds</div>
+                </div>
+            </div>
+            <div class="">
+                <button class="btn blue">Reset</button>
+                <button class="btn red">Stop</button>
+                <button class="btn green">Start</button>
+            </div>
+        </div>
+      
+        
+    </div>
+    <script src="../allScripts/digitalClock.js"></script>
+</body>
+</html>

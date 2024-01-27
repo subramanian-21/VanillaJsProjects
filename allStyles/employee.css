@@ -25,6 +25,7 @@
 .left{
     border: 1px solid gray;
     flex: 1;
+   
 }
 .right{
     border: 1px solid gray;
@@ -89,4 +90,8 @@ input{
 }
 #add{
     height: 30px;
+}
+#left{
+    overflow-y: scroll;
+    height: 500px;
 }

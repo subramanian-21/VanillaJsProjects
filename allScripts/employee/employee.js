@@ -30,16 +30,18 @@ window.onload =async ()=>{
         let formD = new FormData(dataForm)
         let val = [...formD.entries()]
         let addObj = {};
+        let count  = 0;
         for(let k of val){
             if(k[1] =="") {
                 alert("Enter All Fields");
                 break;
             }
             addObj[k[0]] = k[1];
+            count++;
         }
-        console.log(addObj)
+        
            
-        if(addObj.length == 4){
+        if(count == 4){
             empData = [...empData ,addObj]
             renderData(empData)
             form.style.display = "none"
